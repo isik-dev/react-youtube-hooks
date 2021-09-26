@@ -7,6 +7,10 @@ import VideoList from "./VideoList";
 class App extends React.Component {
   state = { information: [], selectedVideo: null };
 
+  componentDidMount() {
+    this.onTermSubmit("doggos");
+  }
+
   onTermSubmit = async (term) => {
     const response = await google.get("/search", {
       params: {
