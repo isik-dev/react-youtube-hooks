@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import VideoDetails from "./VideoDetails";
 import google from "../apis/google";
+import VideoList from "./VideoList";
 
 class App extends React.Component {
   state = { information: [], selectedVideo: null };
@@ -20,6 +21,10 @@ class App extends React.Component {
     console.log(this.state.selectedVideo);
   };
 
+  onVideoSelect = (video) => {
+    this.setState({ selectedVideo: video });
+  };
+
   render() {
     return (
       <div className="ui container">
@@ -29,7 +34,12 @@ class App extends React.Component {
             <div className="eleven wide column">
               <VideoDetails video={this.state.selectedVideo} />
             </div>
-            <div className="five wide column"></div>
+            <div className="five wide column">
+              <VideoList
+                videos={this.state.information}
+                onVideoSelect={this.onVideoSelect}
+              />
+            </div>
           </div>
         </div>
       </div>
