@@ -6,6 +6,6 @@ export default axios.create({
     part: "snippet",
     type: "video",
     maxResults: 5,
-    key: process.env.REACT_APP_PageSpeed,
+    key: "AIzaSyADFHq1iBZzMcRIyRmAi_uVs_rGF8rvsms",
   },
 });
